@@ -1,0 +1,128 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 18-02-2025 a las 14:53:29
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `bd`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `sender_id` int(11) NOT NULL,
+  `receiver_id` int(11) DEFAULT NULL,
+  `message` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `is_group_message` tinyint(1) DEFAULT 0,
+  `read_status` tinyint(4) DEFAULT 0,
+  `file_path` varchar(255) DEFAULT NULL,
+  `is_forwarded` tinyint(1) DEFAULT 0,
+  `is_deleted` tinyint(1) DEFAULT 0,
+  `file_name` varchar(255) DEFAULT NULL,
+  `file_type` varchar(100) DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `messages`
+--
+
+INSERT INTO `messages` (`id`, `sender_id`, `receiver_id`, `message`, `created_at`, `is_group_message`, `read_status`, `file_path`, `is_forwarded`, `is_deleted`, `file_name`, `file_type`, `deleted_at`) VALUES
+(136, 5, NULL, 'hola', '2025-02-05 16:50:19', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(137, 5, NULL, 'te voy a pasar la tarea', '2025-02-05 16:50:30', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(138, 6, NULL, 'ok', '2025-02-05 16:50:35', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(139, 5, NULL, '', '2025-02-05 16:50:50', 0, 0, '../uploads/files/67a396ea60802_Factorización.pdf', 0, 0, 'Factorización.pdf', 'application/pdf', NULL),
+(140, 6, NULL, 'gracias', '2025-02-05 16:51:03', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(141, 6, NULL, '', '2025-02-05 16:51:09', 0, 0, '../uploads/files/67a396fda592b_patri.jpeg', 0, 0, 'patri.jpeg', 'image/jpeg', NULL),
+(142, 8, NULL, 'Saludooos', '2025-02-05 19:41:42', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(143, 8, NULL, '', '2025-02-05 19:41:47', 0, 0, '../uploads/files/67a3befb08979_Ecuaciones de Primer Grado.pdf', 0, 0, 'Ecuaciones de Primer Grado.pdf', 'application/pdf', NULL),
+(144, 9, NULL, '', '2025-02-06 15:11:40', 0, 0, '../uploads/files/67a4d12c97add_homer.gif', 0, 0, 'homer.gif', 'image/gif', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(8) NOT NULL,
+  `email` varchar(120) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_activity` datetime DEFAULT NULL,
+  `profile_image` varchar(255) NOT NULL DEFAULT 'default.png'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `created_at`, `last_activity`, `profile_image`) VALUES
+(1, 'testuser', 'testuser@gmail.com', '42f749ade7f9e195bf475f37a44cafcb', '2025-01-04 23:23:47', NULL, 'default.png'),
+(2, 'Usuario1', 'jorgeycopito@gmail.com', '$2y$10$anaqdkCj1I98QQ4ZtD56benT6VyiGoiUxftMyVswTS8TAf0FCH5jq', '2025-01-04 23:40:09', NULL, 'default.png'),
+(3, 'Andy', 'usuario2@gmail.com', '$2y$10$Fw/tIfAuMdyibkVUCY5D9uBbeQngb/VQVXtnD5E9yze.m/B4uKQWS', '2025-01-04 23:42:18', NULL, 'default.png'),
+(5, 'Jorge', 'jorgeho2007@gmail.com', '$2y$10$SPRvFVogzTe5mkP6DSEIluCLtxeRglOKMmw8/5bJ5yGXEJh5AOd8i', '2025-01-22 16:28:09', NULL, 'default.png'),
+(6, 'Mariela', 'mariela@gmail.com', '$2y$10$yEv0GvaZk7dr9Cwm6OUZS.t.UAv4aa6hm9MrNXNnzqa6Pt/U88Zqe', '2025-01-22 16:41:09', NULL, 'default.png'),
+(7, 'Karo', 'jorgeycopitao@gmail.com', '$2y$10$9dS0EpJPeNLWMyYXKHUsxOkxezxld4XHOidc0eBotyEnuP7nNLZjK', '2025-01-30 17:13:41', NULL, 'default.png'),
+(8, 'Pedro', 'pedro@gmail.com', '$2y$10$aPyRIA7lZldpccwey8ivEuuYQJdHd130D.TgXr/ypiq1bvgfVIUGm', '2025-02-05 17:12:13', NULL, 'avatar4.png'),
+(9, 'Juan', 'juan@gmail.com', '$2y$10$NQYn8VfFGKN9ogZ/c8JVCO1oJxBIbR4Fh282zbSke2gTIVq9itnOW', '2025-02-05 17:34:56', NULL, 'avatar5.png');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
