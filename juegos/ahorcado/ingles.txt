@@ -1,0 +1,8 @@
+manzana|Es una fruta
+banana|Es una fruta amarilla
+computadora|Es una máquina que usas para programar
+elefante|Es un animal grande con trompa
+programacion|Es lo que haces con código
+ahorcado|Es el nombre de este juego
+javascript|Es un lenguaje de programación
+python|Es un lenguaje de programación
