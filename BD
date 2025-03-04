@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-02-2025 a las 14:53:29
+-- Tiempo de generación: 04-03-2025 a las 15:13:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -20,6 +20,22 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calendario`
+--
+
+CREATE TABLE `calendario` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `titulo` varchar(50) NOT NULL,
+  `descripcion` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -56,7 +72,56 @@ INSERT INTO `messages` (`id`, `sender_id`, `receiver_id`, `message`, `created_at
 (141, 6, NULL, '', '2025-02-05 16:51:09', 0, 0, '../uploads/files/67a396fda592b_patri.jpeg', 0, 0, 'patri.jpeg', 'image/jpeg', NULL),
 (142, 8, NULL, 'Saludooos', '2025-02-05 19:41:42', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
 (143, 8, NULL, '', '2025-02-05 19:41:47', 0, 0, '../uploads/files/67a3befb08979_Ecuaciones de Primer Grado.pdf', 0, 0, 'Ecuaciones de Primer Grado.pdf', 'application/pdf', NULL),
-(144, 9, NULL, '', '2025-02-06 15:11:40', 0, 0, '../uploads/files/67a4d12c97add_homer.gif', 0, 0, 'homer.gif', 'image/gif', NULL);
+(144, 9, NULL, '', '2025-02-06 15:11:40', 0, 0, '../uploads/files/67a4d12c97add_homer.gif', 0, 0, 'homer.gif', 'image/gif', NULL),
+(145, 5, NULL, 'holaq', '2025-02-25 14:03:42', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(146, 10, NULL, 'Hola', '2025-03-02 00:40:50', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(147, 5, NULL, 'hola', '2025-03-04 13:35:08', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(148, 5, NULL, 'Hola bbes', '2025-03-04 13:39:34', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(149, 5, NULL, 'a', '2025-03-04 13:39:42', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(150, 5, NULL, 'hola', '2025-03-04 13:43:10', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(151, 5, NULL, '', '2025-03-04 13:43:14', 0, 0, '../uploads/files/67c70372a9c8a_homer.gif', 0, 0, 'homer.gif', 'image/gif', NULL),
+(152, 5, NULL, '', '2025-03-04 13:44:20', 0, 0, '../uploads/files/67c703b4bc959_CONTROL_DE_ASISTENCIA.docx_(1)[1].pdf', 0, 0, 'CONTROL_DE_ASISTENCIA.docx_(1)[1].pdf', 'application/pdf', NULL),
+(153, 5, NULL, 'hola', '2025-03-04 13:46:34', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(154, 5, NULL, 'h', '2025-03-04 13:46:38', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(155, 5, NULL, 's', '2025-03-04 13:47:16', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(156, 5, NULL, '', '2025-03-04 13:47:22', 0, 0, '../uploads/files/67c7046a5767d_homer.gif', 0, 0, 'homer.gif', 'image/gif', NULL),
+(157, 5, NULL, '', '2025-03-04 13:47:29', 0, 0, '../uploads/files/67c70471d9fb6_CONTROL_DE_ASISTENCIA.docx_(1)[1].pdf', 0, 0, 'CONTROL_DE_ASISTENCIA.docx_(1)[1].pdf', 'application/pdf', NULL),
+(158, 5, NULL, 'a', '2025-03-04 13:50:35', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(159, 5, NULL, '', '2025-03-04 13:50:41', 1, 0, '../uploads/files/67c7053123a65_homer.gif', 0, 0, 'homer.gif', 'image/gif', NULL),
+(160, 5, NULL, '', '2025-03-04 13:50:51', 1, 0, '../uploads/files/67c7053be9bc4_CONTROL_DE_ASISTENCIA.docx_(1)[1].pdf', 0, 0, 'CONTROL_DE_ASISTENCIA.docx_(1)[1].pdf', 'application/pdf', NULL),
+(161, 5, NULL, '', '2025-03-04 13:51:02', 1, 0, '../uploads/files/67c7054601a10_bob.png', 0, 0, 'bob.png', 'image/png', NULL),
+(162, 5, NULL, '', '2025-03-04 13:51:09', 1, 0, '../uploads/files/67c7054d81952_bob.png', 0, 0, 'bob.png', 'image/png', NULL),
+(163, 5, NULL, 'a', '2025-03-04 13:53:06', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(164, 5, NULL, '', '2025-03-04 13:53:18', 1, 0, '../uploads/files/67c705ce031c3_FirmBoost - Google Chrome 2024-09-21 16-13-50.mp4', 0, 0, 'FirmBoost - Google Chrome 2024-09-21 16-13-50.mp4', 'video/mp4', NULL),
+(165, 5, NULL, 'a', '2025-03-04 13:57:22', 1, 0, NULL, 0, 0, NULL, NULL, NULL),
+(166, 5, NULL, '', '2025-03-04 13:57:27', 1, 0, '../uploads/files/67c706c71b19c_LSA - Learn. Study. Achieve - Google Chrome 2024-12-08 17-42-12.mp4', 0, 0, 'LSA - Learn. Study. Achieve - Google Chrome 2024-12-08 17-42-12.mp4', 'video/mp4', NULL),
+(167, 5, NULL, '', '2025-03-04 13:57:46', 1, 0, '../uploads/files/67c706da349d8_bob.png', 0, 0, 'bob.png', 'image/png', NULL),
+(168, 5, NULL, '', '2025-03-04 13:57:52', 1, 0, '../uploads/files/67c706e00172b_CONTROL_DE_ASISTENCIA.docx_(1)[1].pdf', 0, 0, 'CONTROL_DE_ASISTENCIA.docx_(1)[1].pdf', 'application/pdf', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notas`
+--
+
+CREATE TABLE `notas` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `contenido` text DEFAULT NULL,
+  `color` varchar(20) DEFAULT '#ffd700',
+  `categoria` varchar(50) DEFAULT 'General',
+  `fecha_creacion` datetime DEFAULT current_timestamp(),
+  `fecha_actualizacion` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `notas`
+--
+
+INSERT INTO `notas` (`id`, `user_id`, `titulo`, `contenido`, `color`, `categoria`, `fecha_creacion`, `fecha_actualizacion`) VALUES
+(2, 5, 'Historia', 'HAjh', '#48dbfb', 'Historia', '2025-03-04 07:29:11', '2025-03-04 08:05:08'),
+(3, 5, 'Matematicas', 'Asa', '#ffd700', 'Matemáticas', '2025-03-04 08:05:27', '2025-03-04 08:05:27');
 
 -- --------------------------------------------------------
 
@@ -71,32 +136,48 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `last_activity` datetime DEFAULT NULL,
-  `profile_image` varchar(255) NOT NULL DEFAULT 'default.png'
+  `profile_image` varchar(255) NOT NULL DEFAULT 'default.png',
+  `onesignal_id` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `created_at`, `last_activity`, `profile_image`) VALUES
-(1, 'testuser', 'testuser@gmail.com', '42f749ade7f9e195bf475f37a44cafcb', '2025-01-04 23:23:47', NULL, 'default.png'),
-(2, 'Usuario1', 'jorgeycopito@gmail.com', '$2y$10$anaqdkCj1I98QQ4ZtD56benT6VyiGoiUxftMyVswTS8TAf0FCH5jq', '2025-01-04 23:40:09', NULL, 'default.png'),
-(3, 'Andy', 'usuario2@gmail.com', '$2y$10$Fw/tIfAuMdyibkVUCY5D9uBbeQngb/VQVXtnD5E9yze.m/B4uKQWS', '2025-01-04 23:42:18', NULL, 'default.png'),
-(5, 'Jorge', 'jorgeho2007@gmail.com', '$2y$10$SPRvFVogzTe5mkP6DSEIluCLtxeRglOKMmw8/5bJ5yGXEJh5AOd8i', '2025-01-22 16:28:09', NULL, 'default.png'),
-(6, 'Mariela', 'mariela@gmail.com', '$2y$10$yEv0GvaZk7dr9Cwm6OUZS.t.UAv4aa6hm9MrNXNnzqa6Pt/U88Zqe', '2025-01-22 16:41:09', NULL, 'default.png'),
-(7, 'Karo', 'jorgeycopitao@gmail.com', '$2y$10$9dS0EpJPeNLWMyYXKHUsxOkxezxld4XHOidc0eBotyEnuP7nNLZjK', '2025-01-30 17:13:41', NULL, 'default.png'),
-(8, 'Pedro', 'pedro@gmail.com', '$2y$10$aPyRIA7lZldpccwey8ivEuuYQJdHd130D.TgXr/ypiq1bvgfVIUGm', '2025-02-05 17:12:13', NULL, 'avatar4.png'),
-(9, 'Juan', 'juan@gmail.com', '$2y$10$NQYn8VfFGKN9ogZ/c8JVCO1oJxBIbR4Fh282zbSke2gTIVq9itnOW', '2025-02-05 17:34:56', NULL, 'avatar5.png');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `created_at`, `last_activity`, `profile_image`, `onesignal_id`) VALUES
+(1, 'testuser', 'testuser@gmail.com', '42f749ade7f9e195bf475f37a44cafcb', '2025-01-04 23:23:47', NULL, 'default.png', NULL),
+(2, 'Usuario1', 'jorgeycopito@gmail.com', '$2y$10$anaqdkCj1I98QQ4ZtD56benT6VyiGoiUxftMyVswTS8TAf0FCH5jq', '2025-01-04 23:40:09', NULL, 'default.png', NULL),
+(3, 'Andy', 'usuario2@gmail.com', '$2y$10$Fw/tIfAuMdyibkVUCY5D9uBbeQngb/VQVXtnD5E9yze.m/B4uKQWS', '2025-01-04 23:42:18', NULL, 'default.png', NULL),
+(5, 'Jorge', 'jorgeho2007@gmail.com', '$2y$10$SPRvFVogzTe5mkP6DSEIluCLtxeRglOKMmw8/5bJ5yGXEJh5AOd8i', '2025-01-22 16:28:09', NULL, 'default.png', NULL),
+(6, 'Mariela', 'mariela@gmail.com', '$2y$10$yEv0GvaZk7dr9Cwm6OUZS.t.UAv4aa6hm9MrNXNnzqa6Pt/U88Zqe', '2025-01-22 16:41:09', NULL, 'default.png', NULL),
+(7, 'Karo', 'jorgeycopitao@gmail.com', '$2y$10$9dS0EpJPeNLWMyYXKHUsxOkxezxld4XHOidc0eBotyEnuP7nNLZjK', '2025-01-30 17:13:41', NULL, 'default.png', NULL),
+(8, 'Pedro', 'pedro@gmail.com', '$2y$10$aPyRIA7lZldpccwey8ivEuuYQJdHd130D.TgXr/ypiq1bvgfVIUGm', '2025-02-05 17:12:13', NULL, 'avatar4.png', NULL),
+(9, 'Juan', 'juan@gmail.com', '$2y$10$NQYn8VfFGKN9ogZ/c8JVCO1oJxBIbR4Fh282zbSke2gTIVq9itnOW', '2025-02-05 17:34:56', NULL, 'avatar5.png', NULL),
+(10, 'Graciela', 'graciela@gmail.com', '$2y$10$A2zOI8KG5qpnlWHH2GFO2OroM.qwK9VGBSula80CiM8goMehp2Lta', '2025-03-02 00:40:44', NULL, 'default.png', NULL);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
+-- Indices de la tabla `calendario`
+--
+ALTER TABLE `calendario`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indices de la tabla `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `notas`
+--
+ALTER TABLE `notas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indices de la tabla `users`
@@ -111,16 +192,44 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `calendario`
+--
+ALTER TABLE `calendario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT de la tabla `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
+
+--
+-- AUTO_INCREMENT de la tabla `notas`
+--
+ALTER TABLE `notas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `calendario`
+--
+ALTER TABLE `calendario`
+  ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `notas`
+--
+ALTER TABLE `notas`
+  ADD CONSTRAINT `notas_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
